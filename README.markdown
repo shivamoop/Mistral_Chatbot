@@ -1,116 +1,111 @@
-# Llama 3 Chatbot
+# Mistral Chatbot
 
-## Overview
-This project is a Streamlit-based chatbot powered by Llama 3 (via Ollama), LangChain, and SerpApi. It uses the ReAct (Reason + Act) framework to handle a variety of user queries, including product recommendations, financial calculations, summarization, and comparisons. The chatbot provides structured responses with web-sourced references and maintains chat history for contextual follow-up questions.
+A ReAct-style AI agent built with LangChain, Ollama, SerpAPI, and Tavily for answering queries with structured responses and web search integration. This chatbot is designed to handle free-text queries, integrate multiple tools, and provide user-friendly outputs with references, as part of an AI Agent Engineer interview task.
 
-## Features
-- **Intent Classification**: Automatically identifies query types (e.g., summarization, math, code, itinerary, product recommendations).
-- **Web Search Integration**: Uses SerpApi to fetch relevant references from Google search results.
-- **Structured Responses**: Delivers clear, formatted outputs with optional comparison tables for queries like product or policy comparisons.
-- **Chat History**: Maintains context for follow-up questions using Streamlit's session state.
-- **Local LLM Processing**: Uses Ollama with the Mistral model for local inference, ensuring privacy and control.
-- **Supported Query Types**:
-  - eCommerce product recommendations (e.g., phones, appliances, air conditioners)
-  - Financial calculations (e.g., discounts, taxes, totals)
-  - Taxation queries (e.g., VAT, import/export tax)
-  - Summarization (e.g., reviews, policies)
-  - Comparisons (e.g., products, tax rates, platforms)
-
-## Prerequisites
-- Python 3.8+
-- A valid [SerpApi API key](https://serpapi.com/) for web search functionality
-- Ollama installed locally with the `mistral` model pulled
-- Required Python packages (see `requirements.txt`)
-
-## Installation
+## Setup Instructions
 1. **Clone the Repository**:
    ```bash
    git clone <repository-url>
    cd <repository-directory>
    ```
-
-2. **Set Up a Virtual Environment** (optional but recommended):
-   ```bash
-   python -m venv venv
-   source venv/bin/activate  # On Windows: venv\Scripts\activate
-   ```
+2. **Install Python**:
+   - Ensure Python 3.8+ is installed. Verify with:
+     ```powershell
+     python --version
+     ```
 
 3. **Install Dependencies**:
-   ```bash
-   pip install -r requirements.txt
-   ```
+   - Create a virtual environment and install required packages:
+     ```powershell
+     python -m venv venv
+     .\venv\Scripts\Activate.ps1
+     pip install -r requirements.txt
+     ```
 
-4. **Install Ollama**:
-   - Follow the [Ollama installation guide](https://ollama.ai/) for your operating system.
+4. **Set Up Ollama**:
+ - Follow the [Ollama installation guide](https://ollama.ai/) for your operating system.
    - Pull the Mistral model:
-     ```bash
+     ```powershell
      ollama pull mistral
      ```
-
-5. **Set Environment Variables**:
-   - Set your SerpApi API key:
-     ```bash
-     export SERPAPI_API_KEY='your-api-key'  # On Windows: set SERPAPI_API_KEY=your-api-key
+     ```powershell
+     Start-Process ollama -ArgumentList "run mistral" -NoNewWindow
      ```
 
-## Usage
-1. **Run the Application**:
-   ```bash
-   streamlit run app.py
-   ```
-   This will launch the chatbot in your default web browser.
+5. **Configure Environment Variables**:
+   - Create a `.env` file in the project directory:
+     ```
+     SERPAPI_API_KEY=your-serpapi-key
+     TAVILY_API_KEY=your-tavily-key
+     ```
+   - Alternatively, set in PowerShell:
+     ```powershell
+     $env:SERPAPI_API_KEY = "your-serpapi-key"
+     $env:TAVILY_API_KEY = "your-tavily-key"
+     ```
+   - Obtain API keys from [SerpAPI](https://serpapi.com) and [Tavily](https://tavily.com).
 
-2. **Interact with the Chatbot**:
-   - Enter queries in the chat input box (e.g., "Compare iPhone 15 and Samsung Galaxy S23", "Summarize Amazon's return policy", or "Calculate total cost of a $500 item with 20% VAT").
-   - The chatbot will process the query, classify its intent, and provide a structured response with web references if applicable.
-   - Chat history is maintained for contextual follow-ups.
+6. **Run the App**:
+   - Activate the virtual environment and start the Streamlit app:
+     ```powershell
+     .\venv\Scripts\Activate.ps1
+     streamlit run mistral_chatbot.py
+     ```
+   - Open your browser at `http://localhost:8501` to use the chatbot.
 
-3. **Sidebar Information**:
-   - The sidebar provides details about the technologies used (Streamlit, Ollama, SerpApi, LangChain).
+## Usage Instructions
 
-## File Structure
-- `app.py`: Main application file containing the chatbot logic, Streamlit interface, and ReAct agent implementation.
-- `requirements.txt`: List of Python dependencies.
-- `README.md`: This file.
+- **Interface**: The chatbot runs in a browser with a chat input field at the bottom. Enter a query and press Enter to receive a response.
+- **Example Queries**:
+  - "Plan a 2-day itinerary for Delhi with a ₹5,000 budget per person for 2-3 people in mid-December."
+  - "Compare the top 3 smartphones under ₹20,000 in India."
+  - "Summarize the latest Indian income tax updates for 2023."
+- **Features**:
+  - Responses include a brief summary, key information (e.g., itinerary or comparison details), and references from SerpAPI and Tavily.
+  - Use the sidebar "Clear Chat History" button to reset the conversation.
+- **Notes**: Ensure the Ollama server is running and API keys are valid before querying.
 
-## Dependencies
-Listed in `requirements.txt`:
-```
-streamlit
-langchain
-langchain_community
-serpapi
-sentence-transformers
-faiss-cpu
-numpy
-```
+## Demo
 
-## Example Queries
-- **Product Recommendation**: "Find the best smartphones under $500."
-- **Financial Calculation**: "What is the final price of a $120 item after 20% VAT and 10% discount?"
-- **Summarization**: "Summarize Amazon's return policy in 3 bullet points."
-- **Comparison**: "Compare sales tax in California vs New York for online goods."
-- **Code Assistance**: "How do I write a Python loop to sum numbers?"
+### Demo 1: 2-Day Itinerary for Delhi
+**Query**: "Plan a 2-day itinerary for Delhi with a ₹5,000 budget per person for 2-3 people in mid-December."
+
+**Response**:
+<img width="1920" height="1032" alt="image" src="https://github.com/user-attachments/assets/5e312da5-874e-4043-9314-22b4a9a3f25e" />
+
+### Demo 2: Compare Smartphones Under ₹20,000
+**Query**: "Compare the top 3 smartphones under ₹20,000 in India."
+
+**Response**:
+
+<img width="1920" height="1032" alt="image" src="https://github.com/user-attachments/assets/0780482f-eaeb-4c04-9f5c-6cee20b24118" />
+
 
 ## Notes
-- **SerpApi Key**: Ensure the `SERPAPI_API_KEY` environment variable is set, or web search functionality will fail.
+- **SerpApi Key & Travily key**: Ensure the `SERPAPI_API_KEY` and `TRAVILY_API_KEY` environment variable is set, or web search functionality will fail.
 - **Ollama Setup**: The Mistral model must be available via Ollama for local inference.
 - **Performance**: Response time depends on the local machine's hardware and Ollama's performance. For faster responses, consider using a GPU-enabled setup with Ollama.
 - **Limitations**: The chatbot currently supports a maximum of one iteration for response refinement. Adjust `max_iterations` in `ollama_react_agent` for more complex queries if needed.
 
 ## Troubleshooting
 - **SerpApi Error**: If you see "Error: SERPAPI_API_KEY not set in environment," ensure the API key is correctly set.
+- **Travily Error**: If you see "Error: TRAVILY_API_KEY not set in environment," ensure the API key is correctly set.
 - **Ollama Not Found**: Verify that Ollama is installed and the `mistral` model is pulled (`ollama list` to check).
 - **Streamlit Issues**: Ensure all dependencies are installed correctly. Run `pip install -r requirements.txt` again if errors occur.
-- **FAISS or Sentence Transformers Errors**: Ensure `faiss-cpu` and `sentence-transformers` are compatible with your Python version.
 
-## Contributing
-Contributions are welcome! Please:
-1. Fork the repository.
-2. Create a feature branch (`git checkout -b feature/your-feature`).
-3. Commit changes (`git commit -m 'Add your feature'`).
-4. Push to the branch (`git push origin feature/your-feature`).
-5. Open a pull request.
+
+## Requirements
+
+- **Python**: 3.8+
+- **Ollama**: With Mistral model
+- **API Keys**: SerpAPI and Tavily API keys
+- **Environment**: Windows PowerShell (or compatible terminal)
+
+## Notes
+
+- Tested on July 23, 2025, at 04:31 AM IST.
+- Ensure the Ollama server remains running during app execution.
+- Check PowerShell logs for debugging if issues arise.
 
 ## License
 This project is licensed under the MIT License. See the `LICENSE` file for details.
