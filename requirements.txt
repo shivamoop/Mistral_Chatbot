@@ -3,6 +3,7 @@ langchain-community
 pydantic
 streamlit
 serpapi
-python-dotenv
 tavily-python
 google-sreach-results
+requests
+
