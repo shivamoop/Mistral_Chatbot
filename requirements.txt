@@ -1,8 +1,8 @@
-langchain==0.2.7 
-langchain-community==0.2.7 
-pydantic==2.7.0 
-streamlit==1.35.0 
-serpapi==1.0.1 
-python-dotenv==1.0.1 
-tavily-python==0.4.0 
+langchain
+langchain-community
+pydantic
+streamlit
+serpapi
+python-dotenv
+tavily-python
 google-sreach-results
