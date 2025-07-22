@@ -1,5 +1,5 @@
 langchain==0.2.7 
-langchain_community==0.2.7 
+langchain-community==0.2.7 
 pydantic==2.7.0 
 streamlit==1.35.0 
 serpapi==1.0.1 
