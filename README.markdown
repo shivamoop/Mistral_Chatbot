@@ -82,14 +82,14 @@ A ReAct-style AI agent built with LangChain, Ollama, SerpAPI, and Tavily for ans
 
 
 ## Notes
-- **SerpApi Key & Travily key**: Ensure the `SERPAPI_API_KEY` and `TRAVILY_API_KEY` environment variable is set, or web search functionality will fail.
+- **SerpApi Key & Tavily key**: Ensure the `SERPAPI_API_KEY` and `TAVILY_API_KEY` environment variable is set, or web search functionality will fail.
 - **Ollama Setup**: The Mistral model must be available via Ollama for local inference.
 - **Performance**: Response time depends on the local machine's hardware and Ollama's performance. For faster responses, consider using a GPU-enabled setup with Ollama.
 - **Limitations**: The chatbot currently supports a maximum of one iteration for response refinement. Adjust `max_iterations` in `ollama_react_agent` for more complex queries if needed.
 
 ## Troubleshooting
 - **SerpApi Error**: If you see "Error: SERPAPI_API_KEY not set in environment," ensure the API key is correctly set.
-- **Travily Error**: If you see "Error: TRAVILY_API_KEY not set in environment," ensure the API key is correctly set.
+- **Tavily Error**: If you see "Error: TAVILY_API_KEY not set in environment," ensure the API key is correctly set.
 - **Ollama Not Found**: Verify that Ollama is installed and the `mistral` model is pulled (`ollama list` to check).
 - **Streamlit Issues**: Ensure all dependencies are installed correctly. Run `pip install -r requirements.txt` again if errors occur.
 
