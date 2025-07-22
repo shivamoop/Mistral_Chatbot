@@ -4,6 +4,6 @@ pydantic
 streamlit
 serpapi
 tavily-python
-google-sreach-results
+google-search-results
 requests
 
