@@ -1,0 +1,114 @@
+2025-07-23 09:03:31,722 - DEBUG - User prompt: “Compare the top 3 smartphones under \u20b920,000 in India.”
+2025-07-23 09:03:31,724 - DEBUG - Chat history: assistant: Hello! I'm powered by Mistral. Ask me to compare smartphones, plan a trip, or anything else, and I'll provide a clear, structured response with references.
+2025-07-23 09:03:31,727 - DEBUG - Initialized Ollama with model: mistral
+2025-07-23 09:03:31,728 - DEBUG - Initialized LLMChain with prompt: 
+            You are a helpful assistant answering queries in a structured manner.
+            Use t...
+2025-07-23 09:03:31,728 - DEBUG - Running in simplified mode
+2025-07-23 09:03:31,728 - DEBUG - Generated run_id: 00a1eaba-632a-4d2f-ac79-a8fb6e1a80a2
+2025-07-23 09:03:31,729 - DEBUG - Searching SerpApi for query: “Compare the top 3 smartphones under \u20b920,000 in India.”
+2025-07-23 09:03:31,730 - DEBUG - Starting new HTTPS connection (1): serpapi.com:443
+2025-07-23 09:03:35,600 - DEBUG - https://serpapi.com:443 "GET /search?engine=google&q=%E2%80%9CCompare+the+top+3+smartphones+under+%E2%82%B920%2C000+in+India.%E2%80%9D&api_key=e67080fa3b66604aa93a5cf31a2becd144a4d48788b3923e3751f44b35af20a2&num=3&output=json&source=python HTTP/11" 200 None
+2025-07-23 09:03:35,612 - DEBUG - Starting new HTTP connection (1): localhost:11434
+2025-07-23 09:03:39,621 - DEBUG - http://localhost:11434 "POST /api/generate HTTP/11" 200 None
+2025-07-23 09:03:50,107 - DEBUG - Simplified response:  **Query**: Compare the top 3 smartphones under \u20b920,000 in India.
+
+**Summary**: This query requires a comparison of three affordable smartphones available in India, priced less than \u20b920,000.
+
+**Key Information or Results**:
+
+1. **Xiaomi Redmi Note 9 Pro Max (Rs. 14,999 - 18,999)**
+   - 6GB RAM, 128GB storage, 6.67" Full HD+ display, Quad rear cameras (64MP + 8MP + 5MP + 2MP), 32MP front camera, 5020mAh battery, Qualcomm Snapdragon 720G processor.
+   - Pros: Large storage, powerful processor, impressive camera setup, large battery capacity.
+   - Cons: No water resistance, micro-USB charging port.
+
+2. **Samsung Galaxy M31 (Rs. 15,999)**
+   - 6GB RAM, 128GB storage, 6.4" Full HD+ display, Quad rear cameras (64MP + 8MP + 5MP + 5MP), 32MP front camera, 6000mAh battery, Exynos 9611 processor.
+   - Pros: Large battery capacity, powerful cameras, brand reputation.
+   - Cons: Outdated processor, slow software updates.
+
+3. **Realme 7 (Rs. 14,999)**
+   - 6GB RAM, 128GB storage, 6.5" Full HD+ display, Quad rear cameras (64MP + 8MP + 2MP + 2MP), 16MP front camera, 5000mAh battery, MediaTek Helio G95 processor.
+   - Pros: Impressive battery life, powerful gaming performance, good cameras for the price.
+   - Cons: No water resistance, slower software updates compared to Xiaomi and Samsung.
+
+**Budget Breakdown**: The budget of \u20b920,000 allows room for one smartphone after considering the top three options within this price range in India.
+2025-07-23 09:04:38,713 - DEBUG - User prompt: “Plan a 2-day itinerary for Delhi with a \u20b95,000 budget.”
+2025-07-23 09:04:38,713 - DEBUG - Chat history: assistant: Hello! I'm powered by Mistral. Ask me to compare smartphones, plan a trip, or anything else, and I'll provide a clear, structured response with references.
+user: “Compare the top 3 smartphones under \u20b920,000 in India.”
+assistant:  **Query**: Compare the top 3 smartphones under \u20b920,000 in India.
+
+**Summary**: This query requires a comparison of three affordable smartphones available in India, priced less than \u20b920,000.
+
+**Key Information or Results**:
+
+1. **Xiaomi Redmi Note 9 Pro Max (Rs. 14,999 - 18,999)**
+   - 6GB RAM, 128GB storage, 6.67" Full HD+ display, Quad rear cameras (64MP + 8MP + 5MP + 2MP), 32MP front camera, 5020mAh battery, Qualcomm Snapdragon 720G processor.
+   - Pros: Large storage, powerful processor, impressive camera setup, large battery capacity.
+   - Cons: No water resistance, micro-USB charging port.
+
+2. **Samsung Galaxy M31 (Rs. 15,999)**
+   - 6GB RAM, 128GB storage, 6.4" Full HD+ display, Quad rear cameras (64MP + 8MP + 5MP + 5MP), 32MP front camera, 6000mAh battery, Exynos 9611 processor.
+   - Pros: Large battery capacity, powerful cameras, brand reputation.
+   - Cons: Outdated processor, slow software updates.
+
+3. **Realme 7 (Rs. 14,999)**
+   - 6GB RAM, 128GB storage, 6.5" Full HD+ display, Quad rear cameras (64MP + 8MP + 2MP + 2MP), 16MP front camera, 5000mAh battery, MediaTek Helio G95 processor.
+   - Pros: Impressive battery life, powerful gaming performance, good cameras for the price.
+   - Cons: No water resistance, slower software updates compared to Xiaomi and Samsung.
+
+**Budget Breakdown**: The budget of \u20b920,000 allows room for one smartphone after considering the top three options within this price range in India.
+
+**References**:
+No references found.
+2025-07-23 09:04:38,713 - DEBUG - Initialized Ollama with model: mistral
+2025-07-23 09:04:38,714 - DEBUG - Initialized LLMChain with prompt: 
+            You are a helpful assistant answering queries in a structured manner.
+            Use t...
+2025-07-23 09:04:38,714 - DEBUG - Running in simplified mode
+2025-07-23 09:04:38,714 - DEBUG - Generated run_id: 9e992468-7316-4d98-b01e-abce91005252
+2025-07-23 09:04:38,714 - DEBUG - Searching SerpApi for query: “Plan a 2-day itinerary for Delhi with a \u20b95,000 budget.”
+2025-07-23 09:04:38,715 - DEBUG - Starting new HTTPS connection (1): serpapi.com:443
+2025-07-23 09:04:40,095 - DEBUG - https://serpapi.com:443 "GET /search?engine=google&q=%E2%80%9CPlan+a+2-day+itinerary+for+Delhi+with+a+%E2%82%B95%2C000+budget.%E2%80%9D&api_key=e67080fa3b66604aa93a5cf31a2becd144a4d48788b3923e3751f44b35af20a2&num=3&output=json&source=python HTTP/11" 200 None
+2025-07-23 09:04:40,097 - DEBUG - Searching Tavily for query: “Plan a 2-day itinerary for Delhi with a \u20b95,000 budget.”
+2025-07-23 09:04:40,099 - DEBUG - Starting new HTTPS connection (1): api.tavily.com:443
+2025-07-23 09:04:46,986 - DEBUG - https://api.tavily.com:443 "POST /search HTTP/11" 200 161
+2025-07-23 09:04:46,990 - DEBUG - Starting new HTTP connection (1): localhost:11434
+2025-07-23 09:04:49,575 - DEBUG - http://localhost:11434 "POST /api/generate HTTP/11" 200 None
+2025-07-23 09:05:00,152 - DEBUG - Simplified response:  **Query**: Plan a 2-day itinerary for Delhi with a \u20b95,000 budget.
+
+**Summary**: This query requires a suggested 2-day trip plan for exploring Delhi within a budget of \u20b95,000.
+
+**Key Information or Results**:
+
+Day 1:
+- **9:00 AM - 11:30 AM: Red Fort**
+  - Entry fee: \u20b9500 (includes audio guide)
+
+- **12:00 PM - 1:30 PM: Lunch at Chawallas** (Average cost per meal: \u20b9250)
+
+- **2:00 PM - 4:00 PM: Jama Masjid**
+  - Entry fee: Free, but camera charge is \u20b9300
+
+- **6:00 PM - 8:00 PM: Chandni Chowk Market** (Shopping and food)
+  - Allow \u20b91000 for shopping and snacks
+
+Day 2:
+- **9:00 AM - 12:00 PM: Qutub Minar**
+  - Entry fee: \u20b930
+
+- **1:00 PM - 2:30 PM: Lunch at Paranthe Wali Gali** (Average cost per meal: \u20b9250)
+
+- **3:00 PM - 6:00 PM: Humayun's Tomb & Lotus Temple**
+  - Entry fee for both sites: \u20b960
+
+- **7:00 PM - 9:00 PM: Dilli Haat** (Shopping, food)
+  - Allow \u20b91000 for shopping and dinner
+
+**Budget Breakdown**:
+- Entrance fees: \u20b91530
+- Audio guides: \u20b9500
+- Lunch (Day 1 & 2): \u20b9500 * 2 = \u20b91000
+- Shopping, snacks, and dinner: \u20b92000
+- Total budget used: \u20b95030
+- Remaining budget: \u20b94700
