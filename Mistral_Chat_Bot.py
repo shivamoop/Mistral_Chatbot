@@ -10,12 +10,13 @@ import streamlit as st
 from requests.exceptions import RequestException
 from uuid import uuid4
 import logging
+from dotenv import load_dotenv
 
 # Set up logging
-logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
+logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s', filename='agent_logs.log', filemode='a')
 logger = logging.getLogger(__name__)
 
-
+load_dotenv()
 
 # Initialize Tavily client
 tavily_client = TavilyClient(os.environ["Tavily_API_KEY"])
@@ -88,11 +89,10 @@ def combine_search_results(query):
     if not deduplicated_results:
         return "No references found for the query."
     return "\n".join([f"- [{r['title']}]({r['link']}): {r['snippet']}" for r in deduplicated_results])
-
 def ollama_react_agent(query, chat_history='', max_iterations=3, simplify=True):
     """ReAct agent with simplified mode, using both SerpApi and Tavily."""
     try:
-        llm = Ollama(model="mistral", base_url="http://localhost:11434")
+        llm = Ollama(model="mistral")
         logger.debug(f"Initialized Ollama with model: mistral")
         
         react_prompt = PromptTemplate(
@@ -107,13 +107,12 @@ def ollama_react_agent(query, chat_history='', max_iterations=3, simplify=True):
             - Use Tavily for factual, concise answers (e.g., 'What is the capital of France?').
             - Use SerpApi for detailed SERP data (e.g., 'Compare iPhone 15 and Samsung Galaxy S24').
             - Combine both for complex queries (e.g., itineraries).
-            Generate a response in markdown format with:
-            - A brief summary of the query (1-2 sentences).
-            - Key information or results (e.g., itinerary with day-wise plans, costs, budget breakdown; or comparison with specs, pros, cons).
+            Generate a response in markdown format as a continuous text, starting with a brief summary (1-2 sentences) followed by detailed information.
+            - For itineraries, include a day-wise plan with activities, times, and costs, and a budget breakdown.
+            - For comparisons, list key specs, pros, and cons for each item.
             - Do not include references in the response; references will be appended separately.
             - Do not include internal reasoning steps (e.g., Thought, Action, Observation).
-            - For itineraries, provide a day-wise plan with activities, times, and costs, and a budget breakdown.
-            - For comparisons, list key specs, pros, and cons for each item.
+            - Avoid adding section titles like 'Query,' 'Summary,' or 'Key Information or Results.'
             
             Query: {query}
             Chat History: {chat_history}
@@ -196,7 +195,6 @@ def ollama_react_agent(query, chat_history='', max_iterations=3, simplify=True):
     except Exception as e:
         logger.error(f"Error in ollama_react_agent: {str(e)}")
         return f"Error processing query: {str(e)}"
-
 # Set page configuration
 st.set_page_config(page_title="Mistral Chatbot", page_icon="🤖")
 
