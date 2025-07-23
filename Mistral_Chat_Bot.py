@@ -92,7 +92,7 @@ def combine_search_results(query):
 def ollama_react_agent(query, chat_history='', max_iterations=3, simplify=True):
     """ReAct agent with simplified mode, using both SerpApi and Tavily."""
     try:
-        llm = Ollama(model="mistral")
+        llm = Ollama(model="mistral", base_url="https://a2f1709e3a3b.ngrok-free.app")
         logger.debug(f"Initialized Ollama with model: mistral")
         
         react_prompt = PromptTemplate(
